@@ -1,3 +1,4 @@
+import {Component} from 'react'
 import './App.css'
 
 // These are the lists used in the application. You can move them to any component needed.
@@ -246,7 +247,57 @@ const imagesList = [
   },
 ]
 
-// Replace your code here
+// MatchGame class component
+class MatchGame extends Component {
+  state = {
+    score: 0,
+    secondsLeft: 60,
+    isGameInProgress: true,
+    timerIntervalId: null,
+  }
+
+  componentDidMount() {
+    this.startGame()
+  }
+
+  decrementTimer = () => {
+    this.setState(previousMatchGameState => {
+      const {secondsLeft} = previousMatchGameState
+
+      return {
+        secondsLeft: secondsLeft + 1,
+      }
+    })
+  }
+
+  startGame = () => {
+    const decrementTimerIntervalId = setInterval(this.decrementTimer, 1000)
+
+    this.setState({
+      score: 0,
+      secondsLeft: 60,
+      isGameInProgress: true,
+      timerIntervalId: decrementTimerIntervalId,
+    })
+  }
+
+  endGame = () => {
+    this.setState(previousMatchGameState => {
+      const {timerIntervalId} = previousMatchGameState
+      clearInterval(timerIntervalId)
+
+      return {
+        timerIntervalId: null,
+        isGameInProgress: false,
+      }
+    })
+  }
+
+  render() {
+    return <div className="match-game-bg-container"></div>
+  }
+}
+
 const App = () => <div>Hello World</div>
 
 export default App
