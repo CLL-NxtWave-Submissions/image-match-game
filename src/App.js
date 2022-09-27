@@ -270,7 +270,7 @@ const GameHeader = props => {
             src="https://assets.ccbp.in/frontend/react-js/match-game-timer-img.png"
             alt="timer"
           />
-          <p className="game-attribute-value">{gameTime}</p>
+          <p className="game-attribute-value">{gameTime} secs</p>
         </div>
       </div>
     </nav>
