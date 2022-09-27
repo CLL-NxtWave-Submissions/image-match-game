@@ -33,11 +33,12 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
 }
 
 .game-brand-img {
-  height: 4rem;
-  width: 4rem;
+  height: 2rem;
+  width: 8rem;
 }
 
 .game-header-content-container,
@@ -48,13 +49,22 @@ body {
 
 .game-attribute-name {
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 550;
 }
 
 .game-attribute-img {
-  height: 1rem;
-  width: 1rem;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+
+.game-attribute-container {
+  margin-right: 1.2rem;
+}
+
+.game-attribute-name,
+.game-attribute-img {
+  margin-right: 0.5rem;
 }
 
 .game-attribute-value {
@@ -64,3 +74,36 @@ body {
 }
 
 /* CSS styling for JSX elements in GameHeader class component - End */
+
+@media (min-width: 768px) {
+  /* CSS styling for JSX elements in GameHeader class component - Start */
+
+  .game-header-bg-container {
+    padding: 1rem 2rem;
+  }
+
+  .game-brand-img {
+    height: 3rem;
+    width: 12rem;
+  }
+
+  .game-attribute-container {
+    margin-right: 1.5rem;
+  }
+
+  .game-attribute-name {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 550;
+  }
+
+  .game-attribute-img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .game-attribute-value {
+    font-size: 1.5rem;
+  }
+  /* CSS styling for JSX elements in GameHeader class component - End */
+}

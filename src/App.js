@@ -247,6 +247,36 @@ const imagesList = [
   },
 ]
 
+// GameHeader component
+const GameHeader = props => {
+  const {gameScore, gameTime} = props
+
+  return (
+    <nav className="game-header-bg-container">
+      <img
+        className="game-brand-img"
+        src="https://assets.ccbp.in/frontend/react-js/match-game-website-logo.png"
+        alt="website logo"
+      />
+      <div className="game-header-content-container">
+        <div className="game-attribute-container">
+          <p className="game-attribute-name">Score: </p>
+          <p className="game-attribute-value">{gameScore}</p>
+        </div>
+
+        <div className="game-attribute-container">
+          <img
+            className="game-attribute-img"
+            src="https://assets.ccbp.in/frontend/react-js/match-game-timer-img.png"
+            alt="timer"
+          />
+          <p className="game-attribute-value">{gameTime}</p>
+        </div>
+      </div>
+    </nav>
+  )
+}
+
 // MatchGame class component
 class MatchGame extends Component {
   state = {
@@ -294,10 +324,17 @@ class MatchGame extends Component {
   }
 
   render() {
-    return <div className="match-game-bg-container"></div>
+    const {score, secondsLeft, isGameInProgress} = this.state
+
+    return (
+      <div className="match-game-bg-container">
+        <GameHeader gameScore={score} gameTime={secondsLeft} />
+      </div>
+    )
   }
 }
 
-const App = () => <div>Hello World</div>
+// Higher level App component, composed of child components
+const App = () => <MatchGame />
 
 export default App
