@@ -292,10 +292,19 @@ class MatchGame extends Component {
 
   decrementTimer = () => {
     this.setState(previousMatchGameState => {
-      const {secondsLeft} = previousMatchGameState
+      const {secondsLeft, timerIntervalId} = previousMatchGameState
+
+      if (secondsLeft === 0) {
+        clearInterval(timerIntervalId)
+
+        return {
+          isGameInProgress: false,
+          timerIntervalId: null,
+        }
+      }
 
       return {
-        secondsLeft: secondsLeft + 1,
+        secondsLeft: secondsLeft - 1,
       }
     })
   }
