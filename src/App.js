@@ -372,6 +372,7 @@ const GameArea = props => {
       <ul className="thumbnail-images-list">
         {imageDataForSelectedCategoryTab.map(singleImageData => (
           <ThumbnailImage
+            key={singleImageData.id}
             imageData={singleImageData}
             expectedIdOfSelectedImage={matchImageId}
             scoreUpdateHandler={updateScoreOnImageSelectionHandler}
@@ -441,11 +442,27 @@ class MatchGame extends Component {
   }
 
   render() {
-    const {score, secondsLeft, isGameInProgress} = this.state
+    const {
+      score,
+      secondsLeft,
+      isGameInProgress,
+      toBeMatchedImageId,
+      selectedImageCategoryTabId,
+    } = this.state
 
     return (
       <div className="match-game-bg-container">
         <GameHeader gameScore={score} gameTime={secondsLeft} />
+        {isGameInProgress && (
+          <GameArea
+            matchImageId={toBeMatchedImageId}
+            imageDataList={imagesList}
+            imageCategoryTabSelectionHandler={this.tabSelectionHandler}
+            updateScoreOnImageSelectionHandler={this.updateScoreHandler}
+            endGameOnImageSelectionHandler={this.endGame}
+            selectedTabId={selectedImageCategoryTabId}
+          />
+        )}
       </div>
     )
   }
