@@ -441,6 +441,26 @@ class MatchGame extends Component {
     })
   }
 
+  tabSelectionHandler = selectedTabId => {
+    this.setState({
+      selectedImageCategoryTabId: selectedTabId,
+    })
+  }
+
+  updateScoreHandler = () => {
+    this.setState(previousMatchGameState => {
+      const updatedScore = previousMatchGameState.score + 1
+      const randomImagesListIndex =
+        Math.floor(Math.random() * 1000) % imagesList.length
+      const randomImageId = imagesList[randomImagesListIndex].id
+
+      return {
+        score: updatedScore,
+        toBeMatchedImageId: randomImageId,
+      }
+    })
+  }
+
   render() {
     const {
       score,
