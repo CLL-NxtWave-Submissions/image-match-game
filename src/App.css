@@ -22,7 +22,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -33,11 +33,11 @@ body {
 .game-header-bg-container {
   background-color: #2c0e3a;
   width: 100%;
-  height: 20%;
+  height: 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 
 .game-brand-img {
@@ -53,13 +53,13 @@ body {
 
 .game-attribute-name {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 550;
 }
 
 .game-attribute-img {
-  height: 1.2rem;
-  width: 1.2rem;
+  height: 1rem;
+  width: 1rem;
 }
 
 .game-attribute-container {
@@ -73,7 +73,7 @@ body {
 
 .game-attribute-value {
   color: #fec653;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 550;
 }
 
@@ -92,13 +92,14 @@ body {
 }
 
 .game-area-match-image {
-  width: 100%;
+  width: 85%;
   height: 25%;
   margin: 0;
   padding: 0;
   margin-left: 0.25rem;
   margin-right: 0.25rem;
   margin-bottom: 2rem;
+  border-radius: 0.2rem;
 }
 
 .game-area-img-category-list {
@@ -120,6 +121,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
 }
@@ -135,14 +137,14 @@ body {
   cursor: pointer;
   color: #ffffff;
   font-family: 'Roboto';
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-left: 1rem;
   margin-right: 1rem;
 }
 
 .selected-img-category {
   color: #fec653;
-  border-bottom: 0.1rem solid #fec653;
+  border-bottom: 0.2rem solid #fec653;
 }
 
 /* CSS styling for JSX elements in ImageCategoryTab component - End */
@@ -153,7 +155,6 @@ body {
   margin-left: 0.25rem;
   margin-right: 0.25rem;
   margin-bottom: 0.5rem;
-  border-radius: 0.2rem;
 }
 
 .thumbnail-image-btn {
@@ -164,8 +165,8 @@ body {
 }
 
 .thumbnail-image {
-  height: 4rem;
-  width: 4rem;
+  height: 5rem;
+  width: 5rem;
 }
 
 /* CSS styling for JSX elements in ThumbnailImage component - End */
@@ -206,9 +207,32 @@ body {
   /* CSS styling for JSX elements in GameArea class component - Start */
 
   .game-area-bg-container {
-    width: 55%;
-    height: 80%;
+    width: 45%;
   }
 
-  /* CSS styling for JSX elements in GameArea class component - Start */
+  .game-area-match-image {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  /* CSS styling for JSX elements in GameArea class component - End */
+
+  /* CSS styling for JSX elements in ImageCategoryTab component - Start */
+
+  .game-area-img-category {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  /* CSS styling for JSX elements in ImageCategoryTab component - End */
+
+  /* CSS styling for JSX elements in ThumbnailImage class component - Start */
+
+  .thumbnail-image {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  /* CSS styling for JSX elements in ThumbnailImage class component - End */
 }
