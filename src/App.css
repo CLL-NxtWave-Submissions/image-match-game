@@ -112,6 +112,22 @@ body {
   height: 15%;
 }
 
+.thumbnail-images-list {
+  width: 100%;
+  height: 55%;
+  list-style-type: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS styling for JSX elements in GameArea component - End */
+
+/* CSS styling for JSX elements in ImageCategoryTab component - Start */
+
 .game-area-img-category {
   background: inherit;
   border: none;
@@ -129,19 +145,7 @@ body {
   border-bottom: 0.1rem solid #fec653;
 }
 
-.thumbnail-images-list {
-  width: 100%;
-  height: 55%;
-  list-style-type: none;
-  padding-left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-/* CSS styling for JSX elements in GameArea component - End */
+/* CSS styling for JSX elements in ImageCategoryTab component - End */
 
 /* CSS styling for JSX elements in ThumbnailImage component - Start */
 

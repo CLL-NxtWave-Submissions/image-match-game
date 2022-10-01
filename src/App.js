@@ -313,6 +313,27 @@ const ThumbnailImage = props => {
   )
 }
 
+const ImageCategoryTab = props => {
+  const {tabData, tabSelectActionHandler, isTabSelected} = props
+  const {tabId, displayText} = tabData
+
+  const onTabSelect = () => tabSelectActionHandler(tabId)
+
+  return (
+    <li>
+      <button
+        type="button"
+        className={`game-area-img-category ${
+          isTabSelected && 'selected-img-category'
+        }`}
+        onClick={onTabSelect}
+      >
+        {displayText}
+      </button>
+    </li>
+  )
+}
+
 // GameArea Component
 const GameArea = props => {
   const {
@@ -354,17 +375,12 @@ const GameArea = props => {
           const isSelected = tabsListItem.tabId === selectedTabId
 
           return (
-            <li key={tabsListItem.tabId}>
-              <button
-                type="button"
-                className={`game-area-img-category ${
-                  isSelected && 'selected-img-category'
-                }`}
-                onClick={imageCategoryTabSelectionHandler(tabsListItem.tabId)}
-              >
-                {tabsListItem.displayText}
-              </button>
-            </li>
+            <ImageCategoryTab
+              key={tabsListItem.tabId}
+              tabData={tabsListItem}
+              tabSelectActionHandler={imageCategoryTabSelectionHandler}
+              isTabSelected={isSelected}
+            />
           )
         })}
       </ul>
