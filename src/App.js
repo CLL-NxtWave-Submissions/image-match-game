@@ -313,6 +313,7 @@ const ThumbnailImage = props => {
   )
 }
 
+// ImageCategoryTab Component
 const ImageCategoryTab = props => {
   const {tabData, tabSelectActionHandler, isTabSelected} = props
   const {tabId, displayText} = tabData
@@ -400,6 +401,31 @@ const GameArea = props => {
   )
 }
 
+// ScoreCard Component
+const ScoreCard = props => {
+  const {finalScore, onPlayAgain} = props
+
+  return (
+    <div className="scorecard-bg-container">
+      <img
+        className="scorecard-trophy-image"
+        src="https://assets.ccbp.in/frontend/react-js/match-game-trophy.png"
+        alt="trophy"
+      />
+      <p className="score-header">Your Score</p>
+      <p className="score-value">{finalScore}</p>
+      <button type="button" className="play-again-button" onClick={onPlayAgain}>
+        <img
+          className="game-reset-image"
+          src="https://assets.ccbp.in/frontend/react-js/match-game-play-again-img.png"
+          alt="reset"
+        />{' '}
+        PLAY AGAIN
+      </button>
+    </div>
+  )
+}
+
 // MatchGame class component
 class MatchGame extends Component {
   state = {
@@ -477,6 +503,8 @@ class MatchGame extends Component {
     })
   }
 
+  playAgainActionHandler = () => this.startGame()
+
   render() {
     const {
       score,
@@ -489,7 +517,7 @@ class MatchGame extends Component {
     return (
       <div className="match-game-bg-container">
         <GameHeader gameScore={score} gameTime={secondsLeft} />
-        {isGameInProgress && (
+        {isGameInProgress ? (
           <GameArea
             matchImageId={toBeMatchedImageId}
             imageDataList={imagesList}
@@ -497,6 +525,11 @@ class MatchGame extends Component {
             updateScoreOnImageSelectionHandler={this.updateScoreHandler}
             endGameOnImageSelectionHandler={this.endGame}
             selectedTabId={selectedImageCategoryTabId}
+          />
+        ) : (
+          <ScoreCard
+            finalScore={score}
+            onPlayAgain={this.playAgainActionHandler}
           />
         )}
       </div>
