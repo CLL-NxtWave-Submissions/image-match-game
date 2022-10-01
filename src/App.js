@@ -360,7 +360,7 @@ const GameArea = props => {
                 className={`game-area-img-category ${
                   isSelected && 'selected-img-category'
                 }`}
-                onClick={imageCategoryTabSelectionHandler}
+                onClick={imageCategoryTabSelectionHandler(tabsListItem.tabId)}
               >
                 {tabsListItem.displayText}
               </button>
