@@ -171,6 +171,57 @@ body {
 
 /* CSS styling for JSX elements in ThumbnailImage component - End */
 
+/* CSS styling for JSX elements in ScoreCard component - Start */
+
+.scorecard-bg-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-score-card-sm-bg.png');
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.scorecard-trophy-image {
+  height: 8rem;
+  width: 8rem;
+}
+
+.score-header {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.score-value {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.score-header,
+.score-value {
+  color: #ffffff;
+  font-weight: 550;
+}
+
+.play-again-button {
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  background-color: #cf60c8;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.game-reset-image {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+/* CSS styling for JSX elements in ScoreCard component - End */
+
 @media (min-width: 768px) {
   /* CSS styling for JSX elements in GameHeader class component - Start */
 
@@ -235,4 +286,13 @@ body {
   }
 
   /* CSS styling for JSX elements in ThumbnailImage class component - End */
+
+  /* CSS styling for JSX elements in ScoreCard component - Start */
+
+  .scorecard-bg-container {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-score-card-lg-bg.png');
+    background-size: cover;
+  }
+
+  /* CSS styling for JSX elements in ScoreCard component - End */
 }
