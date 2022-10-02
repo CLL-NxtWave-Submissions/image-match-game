@@ -412,7 +412,7 @@ const ScoreCard = props => {
         src="https://assets.ccbp.in/frontend/react-js/match-game-trophy.png"
         alt="trophy"
       />
-      <p className="score-header">Your Score</p>
+      <p className="score-header">YOUR SCORE</p>
       <p className="score-value">{finalScore}</p>
       <button type="button" className="play-again-button" onClick={onPlayAgain}>
         <img

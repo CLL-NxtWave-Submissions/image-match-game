@@ -175,32 +175,42 @@ body {
 
 .scorecard-bg-container {
   background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-score-card-sm-bg.png');
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.5rem 3rem;
+  width: 85vw;
+  min-height: 88vh;
+  max-height: 200vh;
+  margin: 2rem;
+  border-radius: 1rem;
 }
 
 .scorecard-trophy-image {
-  height: 8rem;
-  width: 8rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  height: 15rem;
+  width: 22rem;
 }
 
 .score-header {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .score-value {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  font-size: 3.2rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
 }
 
 .score-header,
 .score-value {
-  color: #ffffff;
   font-weight: 550;
 }
 
@@ -208,10 +218,20 @@ body {
   border: none;
   outline: none;
   border-radius: 0.8rem;
-  padding: 1.2rem;
+  padding: 1rem 1.2rem;
   background-color: #cf60c8;
-  color: #ffffff;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.score-header,
+.score-value,
+.play-again-button {
+  color: #ffffff;
 }
 
 .game-reset-image {
@@ -292,6 +312,37 @@ body {
   .scorecard-bg-container {
     background-image: url('https://assets.ccbp.in/frontend/react-js/match-game-score-card-lg-bg.png');
     background-size: cover;
+    width: 42vw;
+    min-height: 100vh;
+    max-height: 200vh;
+    margin: 4rem 2rem;
+  }
+
+  .scorecard-trophy-image {
+    margin-top: 12rem;
+    height: 20rem;
+    width: 27rem;
+  }
+
+  .score-header {
+    font-size: 1.7rem;
+  }
+
+  .score-value {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .play-again-button {
+    border-radius: 0.8rem;
+    padding: 1rem 1.2rem;
+    font-size: 1.5rem;
+  }
+
+  .game-reset-image {
+    height: 1.7rem;
+    width: 1.7rem;
+    margin-right: 0.5rem;
   }
 
   /* CSS styling for JSX elements in ScoreCard component - End */
