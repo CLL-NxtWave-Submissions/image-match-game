@@ -252,13 +252,15 @@ const GameHeader = props => {
   const {gameScore, gameTime} = props
 
   return (
-    <nav className="game-header-bg-container">
-      <img
-        className="game-brand-img"
-        src="https://assets.ccbp.in/frontend/react-js/match-game-website-logo.png"
-        alt="website logo"
-      />
-      <div className="game-header-content-container">
+    <ul className="game-header-bg-container">
+      <li className="game-header-list-item">
+        <img
+          className="game-brand-img"
+          src="https://assets.ccbp.in/frontend/react-js/match-game-website-logo.png"
+          alt="website logo"
+        />
+      </li>
+      <li className="game-header-list-item game-header-content-container">
         <div className="game-attribute-container">
           <p className="game-attribute-name">Score: </p>
           <p className="game-attribute-value">{gameScore}</p>
@@ -272,8 +274,8 @@ const GameHeader = props => {
           />
           <p className="game-attribute-value">{gameTime} secs</p>
         </div>
-      </div>
-    </nav>
+      </li>
+    </ul>
   )
 }
 
